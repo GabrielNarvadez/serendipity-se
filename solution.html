@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Perricone Farms — Solution Engineer Response · Gab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1a3a5f;
+  --navy-deep:#0f2744;
+  --navy-soft:#254b75;
+  --coral:#f45b5b;
+  --coral-dark:#e04545;
+  --cream:#f7f5f0;
+  --ink:#0f2744;
+  --mute:#6b7a8f;
+  --line:rgba(26,58,95,.14);
+  --paper:#ffffff;
+  --ok:#2ea36a;
+}
+@page{
+  size:A4;
+  margin:18mm 16mm 20mm 16mm;
+}
+@page:first{margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;font-size:10.5pt;line-height:1.55}
+
+/* ——— Cover page ——— */
+.cover{
+  page-break-after:always;
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);
+  color:#fff;
+  padding:38mm 22mm 22mm;
+  min-height:297mm;
+  position:relative;
+  overflow:hidden;
+  margin:-18mm -16mm 0 -16mm;
+  width:210mm;
+}
+.cover .bg-dots{position:absolute;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(circle,rgba(255,255,255,.35) 1px,transparent 1px);background-size:22px 22px}
+.cover-logo{display:flex;align-items:center;gap:10px;margin-bottom:70mm;position:relative;z-index:2}
+.cover-logo-mark{width:26px;height:26px;background:var(--coral);border-radius:50%;box-shadow:0 0 20px rgba(244,91,91,.5)}
+.cover-logo-text{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.04em;text-transform:uppercase}
+.cover-eyebrow{font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;position:relative;z-index:2}
+.cover-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:64pt;line-height:.92;letter-spacing:-.01em;text-transform:uppercase;margin:0 0 10mm;position:relative;z-index:2}
+.cover-sub{font-size:14pt;line-height:1.45;color:rgba(255,255,255,.82);max-width:140mm;font-weight:400;position:relative;z-index:2}
+.cover-meta{position:absolute;bottom:22mm;left:22mm;right:22mm;display:flex;justify-content:space-between;align-items:flex-end;color:rgba(255,255,255,.7);font-size:9.5pt;z-index:2;border-top:1px solid rgba(255,255,255,.18);padding-top:10mm}
+.cover-meta b{color:#fff;font-weight:600;display:block;font-size:10.5pt;margin-bottom:2px}
+.cover-meta .label{font-size:8.5pt;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:5px}
+.cover-orbit{position:absolute;right:-60mm;bottom:-60mm;width:180mm;height:180mm;border:1px dashed rgba(255,255,255,.16);border-radius:50%;z-index:1}
+.cover-orbit::before{content:"";position:absolute;inset:12%;border:1px dashed rgba(255,255,255,.12);border-radius:50%}
+.cover-orbit::after{content:"";position:absolute;inset:28%;border:1px dashed rgba(255,255,255,.08);border-radius:50%}
+.cover-dot{position:absolute;width:10px;height:10px;background:var(--coral);border-radius:50%;box-shadow:0 0 16px var(--coral);right:28mm;bottom:135mm;z-index:2}
+
+/* ——— Body ——— */
+main{padding:0}
+h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;color:var(--navy);text-transform:uppercase;letter-spacing:-.005em;margin:0}
+h1{font-size:28pt;font-weight:800;line-height:1;margin:0 0 4mm}
+h2{font-size:20pt;font-weight:800;line-height:1.05;margin:10mm 0 4mm;padding-top:4mm;border-top:2px solid var(--coral);display:table;padding-right:0}
+h2 .num{color:var(--coral);margin-right:8px;font-weight:900}
+h3{font-size:14pt;font-weight:700;line-height:1.15;margin:7mm 0 3mm;color:var(--navy-soft)}
+h4{font-size:11pt;font-weight:700;letter-spacing:.04em;margin:5mm 0 2mm;color:var(--navy)}
+p{margin:0 0 3mm}
+strong,b{color:var(--navy);font-weight:600}
+em{color:var(--navy-soft)}
+a{color:var(--coral);text-decoration:none}
+.hl{color:var(--coral);font-weight:600}
+
+.eyebrow{font-size:8.5pt;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--coral);margin-bottom:3mm}
+.lede{font-size:12pt;line-height:1.5;color:var(--navy);max-width:160mm;margin:0 0 8mm}
+
+hr{border:none;border-top:1px solid var(--line);margin:8mm 0}
+
+/* ——— Lists ——— */
+ul,ol{margin:0 0 4mm;padding-left:6mm}
+li{margin-bottom:1.5mm;line-height:1.55}
+li::marker{color:var(--coral);font-weight:700}
+
+/* ——— Callouts ——— */
+.callout{background:var(--cream);border-left:3px solid var(--coral);padding:5mm 6mm;margin:4mm 0;border-radius:0 4px 4px 0;page-break-inside:avoid}
+.callout .label{font-size:8.5pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);margin-bottom:2mm;display:block}
+
+/* ——— Tables ——— */
+table{width:100%;border-collapse:collapse;margin:4mm 0 6mm;font-size:9.5pt;page-break-inside:avoid}
+thead th{background:var(--navy);color:#fff;text-align:left;padding:3mm 4mm;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10pt;letter-spacing:.05em;text-transform:uppercase}
+tbody td{padding:3mm 4mm;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(even){background:rgba(26,58,95,.025)}
+tbody tr:last-child td{border-bottom:none}
+td strong{color:var(--coral)}
+
+/* ——— Code ——— */
+code{font-family:'JetBrains Mono',Consolas,monospace;font-size:9pt;background:rgba(244,91,91,.08);color:var(--coral-dark);padding:1px 5px;border-radius:3px}
+pre{background:var(--navy-deep);color:#e4ecf6;padding:5mm 6mm;border-radius:6px;font-family:'JetBrains Mono',Consolas,monospace;font-size:8.5pt;line-height:1.5;overflow-x:auto;margin:4mm 0;page-break-inside:avoid;border-left:3px solid var(--coral)}
+pre code{background:transparent;color:inherit;padding:0;font-size:inherit}
+
+/* ——— Section chapter marker ——— */
+.chapter{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:9.5pt;letter-spacing:.24em;color:var(--coral);text-transform:uppercase;margin-bottom:3mm;display:flex;align-items:center;gap:4mm}
+.chapter::before{content:"";display:block;width:10mm;height:2px;background:var(--coral)}
+
+/* ——— Step cards ——— */
+.step{page-break-inside:avoid;margin:4mm 0 5mm}
+.step-head{display:flex;align-items:baseline;gap:4mm;margin-bottom:2mm}
+.step-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;color:var(--coral);font-size:22pt;line-height:1;min-width:14mm}
+.step-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13pt;color:var(--navy);text-transform:uppercase;letter-spacing:.01em}
+
+/* ——— Page break helpers ——— */
+.page-break{page-break-before:always}
+.avoid-break{page-break-inside:avoid}
+
+/* ——— Footer brand bar (visual) ——— */
+.brand-foot{margin-top:14mm;padding-top:6mm;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:8.5pt;color:var(--mute);letter-spacing:.06em;text-transform:uppercase}
+.brand-foot .dot{width:8px;height:8px;background:var(--coral);border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle}
+</style>
+</head>
+<body>
+
+<!-- ——— COVER ——— -->
+<section class="cover">
+  <div class="bg-dots"></div>
+  <div class="cover-orbit"></div>
+  <div class="cover-dot"></div>
+
+  <div class="cover-logo">
+    <div class="cover-logo-mark"></div>
+    <div class="cover-logo-text">Serendipity</div>
+  </div>
+
+  <div class="cover-eyebrow">Solution Engineer Response · Perricone Farms</div>
+  <h1 class="cover-title">HubSpot<br>Report<br>Recreation</h1>
+  <p class="cover-sub">A practical, proactively-scoped response to the Perricone Farms consolidated sales report — mapping plan, data model, dashboard strategy, and integration architecture.</p>
+
+  <div class="cover-meta">
+    <div>
+      <div class="label">Prepared by</div>
+      <b>Gab Narvadez</b>
+      Solution Engineer
+    </div>
+    <div>
+      <div class="label">For</div>
+      <b>Lighthouse &mdash; Megan &amp; AS</b>
+      Client: Perricone Farms
+    </div>
+    <div style="text-align:right">
+      <div class="label">Date</div>
+      <b>April 2026</b>
+      v1.0
+    </div>
+  </div>
+</section>
+
+<main>
+
+<!-- ——— 0 ——— -->
+<div class="chapter">Context</div>
+<h2><span class="num">0 ·</span> What I read before answering</h2>
+<p>I went through Megan's walkthrough and the two data files. Before I propose anything, here's what the report actually is, in plain language, so we're aligned on the problem we're solving:</p>
+<ul>
+  <li>It's a <strong>Consolidated Sales Report</strong> with five lenses on the same underlying data: <strong>By Customer, By Sector, By Plant, By Sales Rep, By Month</strong>.</li>
+  <li>The core metrics are <strong>Gallons Sold</strong>, <strong>Gross Sales ($)</strong>, <strong>vs Budget</strong>, <strong>vs Prior Year</strong>, <strong>Mix %</strong>, <strong>ASP</strong> (avg selling price), plus <strong>AR aging trend</strong> per plant.</li>
+  <li>There are two sources because there are two physical plants:
+    <ul>
+      <li><strong>Batchmaster → Beaumont plant</strong> (API available)</li>
+      <li><strong>Vero → Vero Beach plant</strong> (no API — manual export)</li>
+    </ul>
+  </li>
+  <li>Some customers appear in <strong>both</strong> plants (e.g., "COMBINED TRADER JOE'S", "COMBINED COSTCO"). The Excel manually rolls these up.</li>
+  <li>The report subtracts <strong>intercompany</strong> transactions from consolidated totals.</li>
+  <li>Budget is stored per customer, per month, at the gallon and dollar level.</li>
+  <li>Sector ("Foodservice", "Retail", "Private Label", "Bulk", "PL Foodservice") is a manual mapping table on Sheet1 — it is <strong>not</strong> in either ERP.</li>
+</ul>
+<div class="callout">
+  <span class="label">The framing</span>
+  <p style="margin:0">The problem is not "get data into HubSpot." It's <strong>recreate a BI-style rollup inside a CRM</strong> that wasn't built to be a finance tool. That framing drives every decision below.</p>
+</div>
+
+<!-- ——— 1 ——— -->
+<div class="chapter">Proactive discovery</div>
+<h2><span class="num">1 ·</span> What I'd ask the client before touching HubSpot</h2>
+<p>This is the "proactive problem-solving" piece. Before I build anything I want answers to these — they determine the scope dramatically:</p>
+
+<h3>About the data</h3>
+<ol>
+  <li>Can we get a <strong>sample Vero export file</strong> the way their team actually receives it? The workbook I have is a combined one; I want to see Vero's raw format.</li>
+  <li>What's the <strong>cadence</strong> of the Vero export? Daily, weekly, at month-close? Who does it?</li>
+  <li>Is there a <strong>customer master</strong> anywhere that already reconciles customers across both ERPs, or is the matching logic only in the Excel?</li>
+  <li>How are <strong>intercompany</strong> transactions flagged in the source data? A customer # range? A product code? A plant pairing? Right now the Excel has a hard-coded "Less intercompany" row.</li>
+  <li>How are <strong>new customers</strong> set up today? Is a sector assigned at the time of onboarding, or is it retro-filled in the Excel?</li>
+  <li><strong>Budgets</strong> — are they set once a year, or revised? Who owns the budget file?</li>
+  <li><strong>AR data</strong> — where does that come from? The workbook has BM and VB AR aging trends separately; is that also a Batchmaster/Vero export, or from an accounting system (NetSuite, QuickBooks)?</li>
+</ol>
+
+<h3>About the HubSpot side</h3>
+<ol start="8">
+  <li>What HubSpot tier are they on? <strong>Custom objects require Enterprise</strong> (Sales Hub Enterprise or Operations Hub Enterprise). If they're on Pro, the solution looks different — we'd lean heavier on CRM pipelines plus external BI.</li>
+  <li>Who consumes this report today, and in what format — PDF, dashboard, deck? That changes whether we need the <strong>exact visual layout</strong> replicated or just the insights.</li>
+  <li>Is HubSpot replacing the Excel, or <strong>supplementing</strong> it? A lot of clients ask for replacement but actually want "the same thing, plus filters and sharing." Very different scope.</li>
+</ol>
+
+<!-- ——— 2 ——— -->
+<div class="page-break"></div>
+<div class="chapter">Question 1</div>
+<h2><span class="num">2 ·</span> Steps to accurately map the data into HubSpot</h2>
+<p>The Excel has 60+ tabs, but the raw data underneath is surprisingly simple. Every row from both ERPs is the same shape:</p>
+<pre><code>Date (month) | Customer # | Customer Name | Store # | Store Name |
+Flavor Code | Flavor Desc | Product Code | Product Desc |
+Gallons | Qty | Rate | Amount</code></pre>
+<p>That's one <strong>sales line item</strong>. Every calculation in the workbook — the consolidated report, the sector rollup, the rep dashboard, everything — is a pivot of this table plus a budget table plus a customer-to-sector lookup.</p>
+
+<h3>My 7-step mapping plan</h3>
+
+<div class="step">
+  <div class="step-head"><div class="step-num">01</div><div class="step-title">Build a canonical data dictionary</div></div>
+  <p>One document that lists every source field from Batchmaster and Vero, the HubSpot destination property, the data type, transformation rules, and edge cases. This is the contract we build against. I'd review it with the AS and the client's finance lead before touching the portal.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><div class="step-num">02</div><div class="step-title">Design the HubSpot object model</div></div>
+  <p>The most important decision, and where I'd push back on any prior suggestion to use <strong>Deals</strong> for sales transactions. Deals imply pipeline stages and sales cycles — these are closed shipments. Naming a deal "gallons sold" would be exactly the kind of surface-level decision that confuses the client down the road and makes every dashboard harder to build.</p>
+  <p><strong>Proposed model:</strong></p>
+  <table>
+    <thead>
+      <tr><th style="width:28%">HubSpot Object</th><th style="width:32%">What it represents</th><th>Why</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Company</strong> (native)</td><td>Customer account</td><td>One record per customer; holds the sector, sales rep, plant(s)</td></tr>
+      <tr><td><strong>Contact</strong> (native)</td><td>Customer-side buyer</td><td>Standard CRM use — not load-bearing for this report</td></tr>
+      <tr><td><strong>Product</strong> (native)</td><td>SKU / flavor catalog</td><td>The "what we sell" list. Price, cost, description. ~40 records, rarely changes</td></tr>
+      <tr><td><strong>Custom Object: Sales Transaction</strong></td><td>One invoice line, per month, per product, per customer</td><td>The "what was sold, when, to whom." The atomic unit of the report. Associated to Company AND Product</td></tr>
+      <tr><td><strong>Custom Object: Budget Line</strong></td><td>One budget entry per customer per month (gallons + $)</td><td>Enables "vs Budget" without hard-coding</td></tr>
+      <tr><td><strong>Custom Object: AR Snapshot</strong></td><td>Monthly AR aging per customer per plant</td><td>Lets us replicate the AR trend tabs</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <span class="label">Anticipated follow-up — "If Deals are wrong, why not just use Products?"</span>
+    <p style="margin:0">Because Products and Sales Transactions do different jobs. A <strong>Product</strong> is a catalog entry — one record per SKU, static, defines <em>what we sell</em>. A <strong>Sales Transaction</strong> is an event — one record per customer × product × month, dynamic, defines <em>what was sold, when, to whom</em>. You can't store transactional data on a Product without polluting the catalog. And HubSpot's native "a sale happened" object — <strong>Line Items</strong> — only exists as a child of a Deal or Quote, which forces us back into the Deal anti-pattern. Sales Transaction as a standalone custom object is the clean escape. <strong>We use Products and Sales Transaction together</strong>, not one instead of the other.</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-head"><div class="step-num">03</div><div class="step-title">Define the property set for each object</div></div>
+  <h4>Company (additions to native):</h4>
+  <ul>
+    <li><code>ERP Customer ID — Batchmaster</code> (unique, text)</li>
+    <li><code>ERP Customer ID — Vero</code> (unique, text)</li>
+    <li><code>Active in plant</code> (multi-select: Beaumont, Vero Beach)</li>
+    <li><code>Sector</code> (single-select: Foodservice, Retail, Private Label, Bulk, PL Foodservice)</li>
+    <li><code>Sales Rep</code> (HubSpot user or single-select, matches the rep tabs: Daryl, Julie, Israel, Jaime, Bryan, Olga)</li>
+    <li><code>Is Intercompany</code> (boolean)</li>
+  </ul>
+  <h4>Sales Transaction (custom object):</h4>
+  <ul>
+    <li><code>Transaction ID</code> (unique — hash of source + customer + product + month + line#)</li>
+    <li><code>Transaction Month</code> (date, always 1st of month for consistency)</li>
+    <li><code>Source ERP</code> (Batchmaster / Vero)</li>
+    <li><code>Plant</code> (Beaumont / Vero Beach)</li>
+    <li><code>Gallons</code>, <code>Quantity</code>, <code>Rate</code>, <code>Amount</code></li>
+    <li>Associations: Company (customer), Product</li>
+  </ul>
+  <h4>Budget Line (custom object):</h4>
+  <ul>
+    <li><code>Budget Period</code> (month, year)</li>
+    <li><code>Budget Gallons</code>, <code>Budget Sales $</code></li>
+    <li>Association: Company</li>
+  </ul>
+</div>
+
+<div class="step">
+  <div class="step-head"><div class="step-num">04</div><div class="step-title">Reconcile customers across the two ERPs</div></div>
+  <p>This is the trap. "TRADER JOE'S" in Batchmaster and "TRADER JOE'S" in Vero are the same company but different IDs. I'd:</p>
+  <ul>
+    <li>Build a <strong>match table</strong> using exact-name + fuzzy-match + manual review</li>
+    <li>Land it as two separate ERP customer ID fields on a single Company record</li>
+    <li>Flag anything unmatched for the client's finance team to resolve before go-live</li>
+  </ul>
+</div>
+
+<div class="step">
+  <div class="step-head"><div class="step-num">05</div><div class="step-title">Handle the sector and rep mappings</div></div>
+  <p>Today these live in Excel lookup tables. In HubSpot they become Company properties. I'd load them once from Sheet1 and the rep tabs, then maintain them via a <strong>single workflow</strong> so reps and finance don't both update in different places.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><div class="step-num">06</div><div class="step-title">Normalize the date field</div></div>
+  <p>The raw data stores month as a string ("January", "February"). Every "MTD" and "YTD" calculation in HubSpot depends on having a real date. I'd standardize to the 1st of the month (or a dated transaction-effective-date if the ERPs expose one — worth asking).</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><div class="step-num">07</div><div class="step-title">Pilot import and reconciliation before cutover</div></div>
+  <ul>
+    <li>Load <strong>one full month</strong> (say, January 2024) of Batchmaster data</li>
+    <li>Regenerate every number from that month's tab in the Excel, inside HubSpot</li>
+    <li>Tie the totals out <strong>to the penny</strong> against the client's Excel</li>
+    <li>Only after the pilot passes do we extend to full historical load (2023 + 2024 YTD) and wire up the API</li>
+  </ul>
+  <div class="callout">
+    <span class="label">Non-negotiable</span>
+    <p style="margin:0">This step is the one I'd never cut. The client's trust in the new system lives or dies here.</p>
+  </div>
+</div>
+
+<!-- ——— 3 ——— -->
+<div class="page-break"></div>
+<div class="chapter">Question 2</div>
+<h2><span class="num">3 ·</span> How I'd recreate the report inside HubSpot</h2>
+<p>HubSpot is a CRM, not a BI tool. I want to set the expectation with the client upfront: <strong>we will replicate the numbers and the filters, not the exact visual layout</strong> of a 60-tab Excel. That's a feature, not a compromise — the Excel has ten versions of the same data because that's how Excel forces you to slice things. HubSpot can give them one dashboard with a month selector.</p>
+
+<h3>The layered approach</h3>
+
+<h4>Layer 1 — Native HubSpot custom reports + dashboards</h4>
+<p>Once the data model is live, these are trivial to build and become real-time the moment the Batchmaster API is wired up:</p>
+<ul>
+  <li><strong>Top Customers dashboard</strong> — Gallons and Sales, MTD/YTD, with change vs PY, grouped by Sector</li>
+  <li><strong>Sector performance dashboard</strong> — totals by sector, with filters for plant</li>
+  <li><strong>Plant comparison</strong> — Beaumont vs Vero Beach, MTD and YTD</li>
+  <li><strong>Sales Rep dashboard</strong> — one per rep (Daryl, Julie, etc.), auto-filtered by rep ownership</li>
+  <li><strong>AR Aging trend</strong> — line chart per plant from the AR Snapshot object</li>
+</ul>
+<p>Each of these uses a <strong>month filter</strong> at the top of the dashboard — that replaces the "&lt; Select Here" dropdown in the current Excel.</p>
+
+<h4>Layer 2 — Calculated properties for derived metrics</h4>
+<p>The Excel has a lot of "vs Budget %", "vs PY %", and "Mix %" columns. In HubSpot:</p>
+<ul>
+  <li><code>Variance vs Budget ($)</code> = Amount − Budget Amount (calculated property on Company or rollup)</li>
+  <li><code>Variance vs Budget (%)</code> = (Amount − Budget) ÷ Budget</li>
+  <li><code>YoY %</code> = (Current Year Amount − Prior Year Amount) ÷ Prior Year Amount</li>
+  <li><code>Mix %</code> = Customer Amount ÷ Total Amount <em>(this one is the trickiest — may need a scheduled workflow)</em></li>
+</ul>
+
+<h4>Layer 3 — Workflows for rollups</h4>
+<p>HubSpot native reports can aggregate Sales Transactions up to Company, but for MTD/YTD we'll use a scheduled workflow that refreshes <code>Company.YTD Gallons</code>, <code>Company.YTD Sales</code>, etc. nightly. This keeps dashboards fast.</p>
+
+<h4>Layer 4 — The exec-summary layout</h4>
+<p>The client has a finance-style PDF layout (Exec Summary By Plant, etc.). HubSpot dashboards won't produce that exact format. Two options I'd present:</p>
+<div class="callout">
+  <span class="label">Option A — Recommended: Dashboard-native</span>
+  <p style="margin:0">Rebuild the exec summary as a set of HubSpot dashboard widgets. Finance can share a link, filter by month, export to PDF. <strong>Pros:</strong> single source of truth, real-time, no extra tooling. <strong>Cons:</strong> doesn't match the exact visual layout.</p>
+</div>
+<div class="callout" style="background:#fff5f5;border-left-color:var(--navy)">
+  <span class="label" style="color:var(--navy)">Option B — BI layer on top</span>
+  <p style="margin:0">Connect a tool like <strong>Hex, Databox, Sigma, or Google Sheets via HubSpot's native connector</strong> to pull the data out for the exact PDF layout. <strong>Pros:</strong> client keeps their preferred format. <strong>Cons:</strong> another system to maintain, and the numbers are now in two places.</p>
+</div>
+<p>I'd take this decision back to the client rather than assume. That's a conversation the AS and I run together.</p>
+
+<h3>Why this works</h3>
+<p>Every number in the current Excel can be re-derived from: a Sales Transaction table + a Budget table + a Customer-to-Sector lookup. We have all three. HubSpot's custom reports can do sums, variances, groupings, and time-series on custom objects. The only thing we're giving up is Excel's spatial flexibility, which is a cost-benefit the client has already implicitly accepted by asking for this in the first place.</p>
+
+<!-- ——— 4 ——— -->
+<div class="page-break"></div>
+<div class="chapter">Part 2 Preview</div>
+<h2><span class="num">4 ·</span> The integration architecture</h2>
+<p>Megan asked about the eventual API migration and the Vero drop-in cadence. My high-level view:</p>
+
+<h3>Batchmaster (API)</h3>
+<ul>
+  <li>Build a middleware service (simplest: a small scheduled job — Python/Node, or a no-code option like Make/Workato if the client prefers) that polls Batchmaster on a <strong>daily</strong> cadence.</li>
+  <li>Transform to HubSpot schema, upsert via HubSpot CRM API using <code>Transaction ID</code> as the unique key (idempotent — re-running a day is safe).</li>
+  <li>Financial data rarely needs sub-hour latency. <strong>Daily is the right cadence unless the client tells us otherwise.</strong> I'd push back on "real-time" as over-engineering.</li>
+</ul>
+
+<h3>Vero (no API)</h3>
+<ul>
+  <li>Set up a shared folder (SharePoint / Google Drive) where their team drops the export.</li>
+  <li>A watcher script validates schema, transforms, upserts — same pipeline as Batchmaster, different ingestion.</li>
+  <li><strong>Cadence should match their close cycle.</strong> If Vero closes monthly, monthly import is fine. If they need mid-month visibility, weekly.</li>
+  <li>Put <strong>validation guardrails</strong> on the import — flag row-count deltas, schema drift, duplicate keys — before the data hits HubSpot. The worst failure mode is a silently corrupt month.</li>
+</ul>
+
+<h3>Things I'd flag to the client now</h3>
+<ol>
+  <li>If a customer gets renamed or re-IDed in either ERP, we need a renaming protocol. Otherwise we'll create duplicate Company records.</li>
+  <li>If the ERP doesn't expose a reliable "last modified" timestamp, we have to full-refresh the current month each run. Worth confirming Batchmaster supports incremental.</li>
+  <li>Intercompany logic should live in the middleware, not the dashboard. Tag it on ingest.</li>
+  <li>Is there an upstream accounting system (NetSuite, QB) that already consolidates BM + Vero? If yes, it might be the better source than pulling each ERP separately. Don't rebuild consolidation logic that's already authoritative elsewhere.</li>
+</ol>
+
+<!-- ——— 5 ——— -->
+<div class="page-break"></div>
+<div class="chapter">Architecture</div>
+<h2><span class="num">5 ·</span> Solution architecture</h2>
+<pre><code>                    ┌──────────────────────┐
+                    │    Batchmaster       │
+                    │  (Beaumont plant)    │
+                    │       API ✓          │
+                    └──────────┬───────────┘
+                               │  daily pull
+                               ▼
+┌──────────────────┐    ┌──────────────────┐     ┌─────────────────────┐
+│     Vero         │───▶│   Middleware     │────▶│       HubSpot       │
+│ (Vero Beach)     │    │  (Python/Make/   │     │                     │
+│ Manual CSV drop  │    │   Workato)       │     │  Companies          │
+│ to shared folder │    │                  │     │  Products (custom)  │
+└──────────────────┘    │ • Normalize      │     │  Sales Tx (custom)  │
+                        │ • Dedupe         │     │  Budgets (custom)   │
+                        │ • Match cust.    │     │  AR Snap (custom)   │
+                        │ • Flag intercomp │     │                     │
+                        │ • Validate       │     │  ├─ Workflows       │
+                        └──────────────────┘     │  ├─ Calc properties │
+                                                 │  └─ Dashboards      │
+                                                 └──────────┬──────────┘
+                                                            │
+                                            ┌───────────────┼──────────────┐
+                                            ▼               ▼              ▼
+                                    ┌──────────────┐ ┌────────────┐ ┌────────────┐
+                                    │ Exec Summary │ │ Rep Dash   │ │ Sector     │
+                                    │ Dashboard    │ │ (per rep)  │ │ Performance│
+                                    └──────────────┘ └────────────┘ └────────────┘</code></pre>
+
+<!-- ——— 6 ——— -->
+<div class="chapter">Meeting prep</div>
+<h2><span class="num">6 ·</span> What I'd bring to the client meeting</h2>
+<p>Per the SE rubric ("go beyond suggestions"), I'd walk in with:</p>
+<ol>
+  <li>This document as the written record.</li>
+  <li>A <strong>3-slide deck</strong> for the AS to present: problem → proposed architecture → phased rollout.</li>
+  <li>A <strong>HubSpot sandbox portal</strong> with the custom objects already created and one month of pilot data loaded, so the client can click through a working dashboard instead of imagining one.</li>
+  <li>A <strong>phased rollout plan</strong>: Week 1–2 data model + pilot import; Week 3–4 dashboards + reconciliation; Week 5–6 Batchmaster API live; Week 7+ Vero cadence + AR integration.</li>
+</ol>
+<div class="callout">
+  <span class="label">Why the sandbox</span>
+  <p style="margin:0">The sandbox is the part that makes the meeting feel real. Excel mockups of dashboards are a red flag — if I can't stand up a working example in a sandbox in a week, the solution probably has a gap I haven't found yet.</p>
+</div>
+
+<!-- ——— 7 ——— -->
+<div class="page-break"></div>
+<div class="chapter">Naming discipline</div>
+<h2><span class="num">7 ·</span> Deep-level naming</h2>
+<p>The rubric called out not naming things like "gallons sold." Here's how I'd name the key pieces, and why:</p>
+<table>
+  <thead>
+    <tr><th>Thing</th><th>Bad name</th><th>Good name</th><th>Why</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>The atomic sales record</td>
+      <td>"Gallons Sold" deal</td>
+      <td><strong>Sales Transaction</strong></td>
+      <td>It's a transaction, not a deal. "Gallons" is one metric on it, not its identity.</td>
+    </tr>
+    <tr>
+      <td>The budget record</td>
+      <td>"Budget Deal"</td>
+      <td><strong>Budget Line</strong></td>
+      <td>Matches finance's mental model. Parallel to "Sales Transaction."</td>
+    </tr>
+    <tr>
+      <td>The Batchmaster → HubSpot pipe</td>
+      <td>"BM Sync"</td>
+      <td><strong>Beaumont Plant Ingestion</strong></td>
+      <td>Client thinks in plants, not ERP brand names. Future-proofs if they switch ERPs.</td>
+    </tr>
+    <tr>
+      <td>The sector field</td>
+      <td>"Type"</td>
+      <td><strong>Channel / Sector</strong></td>
+      <td>"Type" is meaningless. Channel is the word their sales team actually uses.</td>
+    </tr>
+    <tr>
+      <td>Custom dashboard</td>
+      <td>"Sales Report"</td>
+      <td><strong>Consolidated Sales Performance — [Month]</strong></td>
+      <td>Matches the Excel title they already know. Reduces training friction.</td>
+    </tr>
+  </tbody>
+</table>
+<p>Small, but these are the cues the AS will repeat to the client for the next year. Worth getting right on day one.</p>
+
+<div class="brand-foot">
+  <div><span class="dot"></span>Serendipity &mdash; Solution Engineer Response</div>
+  <div>Perricone Farms · HubSpot Report Recreation · v1.0</div>
+</div>
+
+</main>
+</body>
+</html>
